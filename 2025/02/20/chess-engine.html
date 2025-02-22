@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
-    Writing a Chess Engine in Go - The Debug Log
+    Writing a Chess Engine in Go - The Event Loop
     
   </title>
 
-  <meta name="description" content="Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth...">
+  <meta name="description" content="In this post, I dive deep into the process of building a chess engine using Go. From implementing sophisticated search algorithms to fine-tuning evaluation f...">
 
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="https://jaredgrxss.github.io/2025/02/20/chess-engine.html">
-  <link rel="alternate" type="application/rss+xml" title="The Debug Log" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="The Event Loop" href="/feed.xml">
 
 </head>
 
@@ -31,7 +31,7 @@
   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand" href="/">The Debug Log</a>
+    <a class="navbar-brand" href="/">The Event Loop</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fa fa-bars"></i>
@@ -73,7 +73,7 @@
               <a href="#">Jared Gross</a>
               on February 20, 2025 &middot; <span class="reading-time" title="Estimated read time">
   
-   5 mins  read </span>
+   3 mins  read </span>
 
             </span>
           </div>
@@ -86,41 +86,55 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
 
-        <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+        <p>In this post, I dive deep into the process of building a chess engine using Go. From implementing sophisticated search algorithms to fine-tuning evaluation functions, this journey was as challenging as it was rewarding. </p>
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+<p>After many nights spent researching, following along with various online guides, and reading (a lot) of the chess programming wiki (yes, that is a thing), I was able to create an engine that faired well among various real players and other engines.</p>
+
+<h2 class="section-heading">The Game of Chess</h2>
+
+<p>At the heart of the engine lies the search algorithm. I began with the classic minimax approach and enhanced it using alpha-beta pruning, which significantly trimmed down the number of positions to evaluate. This optimization was crucial in achieving a responsive and efficient engine.</p>
+
+<p>Implementing iterative deepening further allowed the engine to progressively explore deeper move sequences, ensuring that it could provide a strong move even under strict time constraints.</p>
+
+<h2 class="section-heading">Decisions, Decisions, Decisions...</h2>
+
+<p>The next major challenge was designing a robust evaluation function. Balancing piece values, positional advantages, and mobility metrics was key to developing an engine that could effectively assess the quality of a position.</p>
+
+<blockquote class="blockquote">
+  "Chess is the struggle against the error." – Johannes Zukertort
+</blockquote>
+
+<p>Fine-tuning these parameters required extensive testing and iteration, as I ran countless simulations to calibrate the engine’s performance. The process not only improved the engine’s decision-making but also deepened my understanding of game theory and algorithmic optimization.</p>
+
+<h2 class="section-heading">Representing Chess, Programatically</h2>
+
+<p>Choosing Go was a deliberate decision. Its powerful concurrency model and straightforward syntax enabled rapid prototyping and efficient handling of compute-intensive tasks, which are inherent to chess engine development. This made the integration of complex algorithms smoother and more scalable.</p>
+
+<img class="img-fluid" src="https://source.unsplash.com/featured/?chess" alt="Chess Pieces on a Board">
+<span class="caption text-muted">Chess, where every move is a step toward mastery.</span>
+
+<h2 class="section-heading">Exponential Search?</h2>
+
+<p>Choosing Go was a deliberate decision. Its powerful concurrency model and straightforward syntax enabled rapid prototyping and efficient handling of compute-intensive tasks, which are inherent to chess engine development. This made the integration of complex algorithms smoother and more scalable.</p>
+
+<h2 class="section-heading">My Chess Engine Sucks Now</h2>
+
+<p>Choosing Go was a deliberate decision. Its powerful concurrency model and straightforward syntax enabled rapid prototyping and efficient handling of compute-intensive tasks, which are inherent to chess engine development. This made the integration of complex algorithms smoother and more scalable.</p>
+
+<h2 class="section-heading">Exponential Search, Done Better</h2>
+
+<p>Choosing Go was a deliberate decision. Its powerful concurrency model and straightforward syntax enabled rapid prototyping and efficient handling of compute-intensive tasks, which are inherent to chess engine development. This made the integration of complex algorithms smoother and more scalable.</p>
+    
+<h2 class="section-heading">Evaluation: Am I Winning?</h2>
+
+<p>Choosing Go was a deliberate decision. Its powerful concurrency model and straightforward syntax enabled rapid prototyping and efficient handling of compute-intensive tasks, which are inherent to chess engine development. This made the integration of complex algorithms smoother and more scalable.</p>
 
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+<h2 class="section-heading">Too Many Features, Too Little Time</h2>
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+<p>Choosing Go was a deliberate decision. Its powerful concurrency model and straightforward syntax enabled rapid prototyping and efficient handling of compute-intensive tasks, which are inherent to chess engine development. This made the integration of complex algorithms smoother and more scalable.</p>
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
-
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
-
-<h2 class="section-heading">The Final Frontier</h2>
-
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-<blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-
-<h2 class="section-heading">Reaching for the Stars</h2>
-
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-<img class="img-fluid" src="https://source.unsplash.com/Mn9Fa_wQH-M/800x450" alt="Demo Image">
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
 
         <hr>
 
